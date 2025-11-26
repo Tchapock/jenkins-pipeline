@@ -16,6 +16,10 @@ pipeline   {
             sh 'touch text-$BUILD_ID'
         }
     }
-
+    stage('test'){
+        steps{
+            sh'touch myfile'
+        }
     }
-}
+    }
+    
