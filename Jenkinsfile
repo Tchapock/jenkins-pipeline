@@ -14,7 +14,7 @@ pipeline   {
             sh 'echo "test"'
             sh 'ls'
             sh 'pwd'
-            sh 'date'
+        
         }
     }
     stage('create'){
