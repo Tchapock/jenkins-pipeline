@@ -7,13 +7,26 @@ pipeline   {
                 sh 'cat result.html'
             }
         }
-        stage('dockerImageBuild'){
+        stage{
             steps{
-                sh 'docker -v'
+                sh'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 440744242159.dkr.ecr.us-east-1.amazonaws.com'
             }
         }
+        stage('dockerImageBuild'){
+            steps{
+                sh 'docker build -t devops .'
+            }
+        }
+        stage('dockerImageTag'){
+            steps{
+                sh 'docker tag devops:latest 440744242159.dkr.ecr.us-east-1.amazonaws.com/devops:latest'
+            }
+        }
+
+
         stage('pushImage'){
             steps{
+                sh 'docker push 440744242159.dkr.ecr.us-east-1.amazonaws.com/devops:latest'
                 sh ' docker ps'
             }
         } 
