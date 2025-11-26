@@ -6,6 +6,7 @@ pipeline   {
                 sh 'echo "clone"'
                 sh 'uname -r'
                 sh 'cat /etc/os-release'
+                sh 'nproc'
             }
         } 
     stage('test'){
