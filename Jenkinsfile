@@ -12,6 +12,7 @@ pipeline   {
     stage('test'){
         steps{
             sh 'echo "test"'
+            sh 'ls'
         }
     }
     stage('create'){
