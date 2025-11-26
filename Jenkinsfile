@@ -13,6 +13,7 @@ pipeline   {
         steps{
             sh 'echo "test"'
             sh 'ls'
+            sh 'pwd'
         }
     }
     stage('create'){
