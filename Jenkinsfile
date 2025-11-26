@@ -19,14 +19,14 @@ pipeline   {
         }
         stage('dockerImageTag'){
             steps{
-                sh 'docker tag devops:latest 440744242159.dkr.ecr.us-east-1.amazonaws.com/devops:v.3'
+                sh 'docker tag devops:latest 440744242159.dkr.ecr.us-east-1.amazonaws.com/devops:v.4'
             }
         }
 
 
         stage('pushImage'){
             steps{
-                sh 'docker push 440744242159.dkr.ecr.us-east-1.amazonaws.com/devops:v.3'
+                sh 'docker push 440744242159.dkr.ecr.us-east-1.amazonaws.com/devops:v.4'
                 sh ' docker ps'
             }
         } 
